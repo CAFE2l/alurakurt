@@ -13,6 +13,11 @@ const Box = styled.div`
     border-radius: 8px;
 `;
 
+const AreaBox = styled(Box)<{ area?: string }>`
+    grid-area: ${props => props.area};
+    padding: 16px;
+`;
+
 const MainGrid = styled.main`
     display: grid;
     grid-gap: 10px;
@@ -27,16 +32,17 @@ const MainGrid = styled.main`
 export default function pau(){
   return(
     <MainGrid>
+        <AreaBox area="profileArea">
+            Imagem
+        </AreaBox>
 
-    <Box>
-        Imagem
-    </Box>
-    <Box>
-        Bem Vindo
-    </Box>
-    <Box>
-        Comunidades
-    </Box>
+        {/* style="grid-area: profileArea"*/}
+        <AreaBox area="welcomeArea">
+            Bem Vindo
+        </AreaBox>
+        <AreaBox area="profileRelationsArea">
+            Comunidades
+        </AreaBox>
 
     </MainGrid>
   );
