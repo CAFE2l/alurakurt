@@ -1,7 +1,6 @@
 // "use client";
 import GlobalStyle from './_components/globalstyles';
-import MainGrid from '../src/components/MainGrid/index';
-import Box from '../src/components/Box/index';
+
 
 export default function Home() {
   const githubUser = 'CAFE2l';

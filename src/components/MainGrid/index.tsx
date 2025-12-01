@@ -5,22 +5,25 @@ const MainGrid = styled.main`
   grid-gap: 10px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  max-width: 500px; /* Largura máxima para mobile */
   padding: 16px;
-  display: grid; /* Liga o grid no mobile também */
-
-  /* LAYOUT MOBILE (Padrão) */
+  
+  /* Definindo o layout MOBILE primeiro (Mobile First) */
+  display: grid;
+  grid-template-columns: 1fr;
   grid-template-areas: 
     "welcomeArea"
     "profileRelationsArea";
-  grid-template-columns: 1fr; /* Uma coluna */
+    /* Note: A 'profileArea' não existe no mobile, por isso não está aqui. */
 
-  /* LAYOUT DESKTOP (Sobrescreve o mobile) */
-  @media(min-width: 860px){
+  /* Quando a tela for 860px OU MAIOR, aplica o layout de desktop */
+  @media(min-width: 860px) {
     max-width: 1110px;
+    display: grid;
     grid-template-areas: 
       "profileArea welcomeArea profileRelationsArea";   
     grid-template-columns: 160px 1fr 312px; 
   }
 `;
+
 export default MainGrid;
